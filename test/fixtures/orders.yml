@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: MyText
+  total: 9.99
+  quantity: 1
+  book_id: 
+
+two:
+  client: MyText
+  total: 9.99
+  quantity: 1
+  book_id: 
