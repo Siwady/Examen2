@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Examen2</title>
+  <title>Biblioteca</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div id="panelwrap">
+  <div class="header">
+    <div class="title">My Bank Software</div>
+
+    <div class="header_right">
+      
+    </div>
+
+    <div class="menu">
+    <ul>
+      <li><%= link_to "HOME", root_path %></li>
+      <% if current_user.present? %>
+        <li><%= link_to "MIS LIBROS", mybooks_author_path(current_user.id) %></li>
+        <li><%= link_to "LOGOUT", logout_path,method: :delete %></li>
+      <% else %>
+        <li><%= link_to "LIBROS", books_path %></li>
+        <li><%= link_to "LOGIN", login_path %></li>
+        <li><%= link_to "SIGN UP", new_author_path %></li>
+      <% end %>
+    </ul>
+    </div>
+
+  </div>
+
+  <%= yield %>
+
+</div>
 
 </body>
-</html>

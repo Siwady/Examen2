@@ -1,0 +1,18 @@
+
+%h2 Please Login
+%p Please enter your credentials fo the page
+- if flash[:notice].present?
+  %p
+    .notice= flash[:notice]
+
+
+= form_for :session, url: login_path do |f|
+  %h2 User Login
+  .form_row
+    = f.label :email
+    = f.email_field :email
+  .form_row
+    = f.label :password
+    = f.password_field :password
+  #register
+  = f.submit "Login"

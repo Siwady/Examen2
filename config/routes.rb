@@ -1,10 +1,22 @@
 Examen2::Application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  resources :authors do 
+    get "mybooks" , on: :member
+  end
 
+  resources :books do
+     resources :orders 
+  end
+  # You can have the root of your site routed with "root"
+  root 'home#index'
+
+
+  get "/login" => "sessions#new"#, as: :patito
+  post "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

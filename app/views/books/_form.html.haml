@@ -1,0 +1,21 @@
+= render partial: "errors/errors", locals: {obj: @book}
+
+%p Ingresa los datos de la nueva cancion
+
+= form_for [@author, @book] do |f|
+
+
+  .field
+    = f.label :title, "Titulo"
+    = f.text_field :title
+
+  .field
+    = f.label :duration, "Duracion"
+    = f.text_field :duration
+
+  .field
+    = f.label :music_and_lyrincs_by, "Musica y Lirica por"
+    = f.text_field :music_and_lyrincs_by
+
+  .field
+    = f.submit
