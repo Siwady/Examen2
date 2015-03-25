@@ -1,5 +1,8 @@
 %tr
-  %td= song.title
-  %td= song.duration
-  %td= song.music_and_lyrincs_by
-  %td= link_to 'Borrar', [song.album, song], method: :delete, data: { confirm: "Estas seguro?" }
+  %td= book.author.name
+  %td= book.title
+  %td= book.description
+  %td= book.price
+  %td= book.category
+
+  

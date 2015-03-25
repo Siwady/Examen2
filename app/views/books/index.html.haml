@@ -1,0 +1,14 @@
+%h1 Libros
+%p Listado de libros
+
+- if @book.any?
+  %table{border: "1"}
+    %tr
+      %th Autor
+      %th Titulo
+      %th Descripcion
+      %th Precio
+      %th Categoria
+    = render @book
+- else
+  %em No hay ningun libro agregado

@@ -4,17 +4,17 @@ class BooksController < ApplicationController
   end
 
   def new
-    @author = Author.find(params[:id])
+    @author = current_user
     @book = Book.new
   end
 
   def create
-    @author = Author.find(params[:album_id])
+    @author = current_user
 
     @book = @author.books.build(book_params)
 
     if @book.save
-      redirect_to @author
+      redirect_to mybooks_author_path(current_user.id)
     else
       render :new
     end
