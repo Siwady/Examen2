@@ -16,12 +16,7 @@ class Book < ActiveRecord::Base
   end
 
   def  total_money(book)
-    @order = book.orders
-    @total=0
-    @order.each do |o|
-       @total=@total+o.total
-    end
-
-    return @total
+    @total = Order.where("book_id = #{book.id}")
+    @total.sum(:total)
   end
 end

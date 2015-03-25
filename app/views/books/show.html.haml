@@ -19,6 +19,10 @@
   %strong Categoria
   = @book.category
 
+%p
+  %strong Total de ordenes recaudado
+  = @book.total_money(@book)
+
   %h2 Detalle de Ordenes
 
   = render partial: "order", locals: { orders: @book.orders}
