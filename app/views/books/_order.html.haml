@@ -1,0 +1,14 @@
+- if orders.any?
+  %h2 Ordenes
+
+  %table{border:"1"}
+    %tr
+      %th Cliente
+      %th Cantidad
+      %th Total
+      %th
+
+    = render orders
+ 
+- else
+  %em Aun no tiene ordenes

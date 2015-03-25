@@ -1,14 +1,11 @@
 %h1 Libros
 %p Listado de libros
+- if flash[:notice].present?
+  .notice= flash[:notice]
 
 - if @book.any?
-  %table{border: "1"}
-    %tr
-      %th Autor
-      %th Titulo
-      %th Descripcion
-      %th Precio
-      %th Categoria
-    = render @book
+  = render partial: "shared/filter_form", locals: {form_path: books_path}
+  .js_filtered_table
+    = render partial: "table", locals: {bank_accounts: @book}
 - else
   %em No hay ningun libro agregado

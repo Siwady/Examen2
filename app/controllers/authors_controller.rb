@@ -12,7 +12,7 @@ class AuthorsController < ApplicationController
     @authors = Author.new(authors_params)
 
     if @authors.save
-      #authorMailer.welcome_email(@author).deliver
+      AuthorMailer.welcome_email(@authors).deliver
       login(@authors)
     else
       render :new

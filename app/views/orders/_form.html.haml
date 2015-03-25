@@ -1,0 +1,20 @@
+= render partial: "errors/errors", locals: {obj: @order}
+
+%p Ingresa los datos de la nueva cancion
+
+= form_for [@book, @order] do |f|
+
+
+  .field
+    = f.label :client, "Cliente"
+    = f.text_field :client
+
+  .field
+    = f.label :quantity, "Cantidad"
+    = f.number_field :quantity
+
+
+  .field
+    = f.submit
+
+    =link_to "Cancel", books_path

@@ -1,0 +1,11 @@
+%h1 Bienvenido a La Biblioteca
+%p 
+  Estimado
+  %strong= @author.name
+  bienvenido a mi la biblioteca. 
+%p
+  Tu usuario para poder logear es:
+  %strong= @author.email
+%p
+  Por favor entra a nuestra pagina y pon tus credenciales
+  = link_to "Tu Biblioteca", root_path

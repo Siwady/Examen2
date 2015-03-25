@@ -1,8 +1,10 @@
 %tr
   %td= book.author.name
-  %td= book.title
+  %td= link_to book.title, book
   %td= book.description
-  %td= book.price
+  %td= book.set_with_lempiras
   %td= book.category
+
+  %td= link_to "Editar", edit_book_path(book)
 
   

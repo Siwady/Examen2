@@ -1,0 +1,34 @@
+- if flash[:notice].present?
+  .notice= flash[:notice]
+
+%p
+  %strong Autor
+  = @book.author.name
+%p
+  %strong Titulo
+  = @book.title
+%p
+  %strong Descripcion
+  = @book.description
+
+%p
+  %strong Precio
+  = @book.price
+
+%p
+  %strong Categoria
+  = @book.category
+
+  %h2 Detalle de Ordenes
+
+  = render partial: "order", locals: { orders: @book.orders}
+
+  %p= link_to "Nueva Orden",  new_book_order_path(@book)
+
+-if  @book.author== current_user &&!(current_user.nil?)
+  = link_to "Editar libro", edit_book_path(@book)
+  = link_to "back", books_path(current_user.id)
+- if @book.author== current_user &&@book.orders.count == 0
+  = link_to "Borrar Libro", book_path(@book),method: :delete
+  
+ 

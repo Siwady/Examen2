@@ -1,0 +1,12 @@
+%h1 alguien ordeno uno de sus libros
+%p 
+  Estimado
+  %strong= @book.author.name
+  se le comunica que se ha creado una nueva orden:
+%p
+  %strong= @order.client
+  %strong= @order.quantity
+
+%p
+  Por favor entra a nuestra pagina y revisa las ordenes
+  = link_to "Tu Biblioteca", root_path

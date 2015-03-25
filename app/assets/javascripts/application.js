@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on("ready page:load", function(){
+  
+  $(".js_filter_form").on("ajax:success", function(e, data, status, xhr){
+    $(".js_filtered_table").html(data)
+  });
+
+  $(".js_filter_form").on("ajax:error", function(e, xhr, status, error){
+    alert(error);
+  });
+
+  $("#keyword").on("keyup", function(e){
+    $(".js_filter_form").submit(); 
+  });
+});

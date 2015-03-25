@@ -19,7 +19,9 @@
 
   .field
     = f.label :category, "Categoria"
-    = f.text_field :category
+    = f.select :category, Book.categories_to_select, {}
 
   .field
     = f.submit
+
+    =link_to "Cancel", mybooks_author_path(current_user.id)

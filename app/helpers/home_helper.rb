@@ -1,5 +1,5 @@
 module HomeHelper
-  def get_books
+  def books
     Book.count
   end
 
